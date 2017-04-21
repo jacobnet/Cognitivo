@@ -1,14 +1,15 @@
 <?php
 
 	include("conexion.php"); 
-	session_start();
-if (isset($_SESSION['u_usuario'])) {
-	$usuario=$_SESSION['u_usuario'];
-}else{
-    header("Location: index.php");
-}
+	// session_start();
+// if (isset($_SESSION['u_usuario'])) {
+	// $usuario=$_SESSION['u_usuario'];
+// }else{
+    // header("Location: index.php");
+// }
 
-
+	$usuario="correo@algo.com";
+	$Valor= 0;
 	$Nombre	=$_POST['Nombre']; 
 	$Fecha	=$_POST['Fecha'];
 	$Lugar	=$_POST['Lugar'];
@@ -30,6 +31,7 @@ if (isset($_SESSION['u_usuario'])) {
 		$RFC = $_POST['rfc'];
 		$Personalidad = $_POST['Personalidad'];
 		$Razon = $_POST['Razon'];
+		$Puntuacion = 2;
 	}else {
 	$RFC = "No hay";
 	$Personalidad = "No hay";
@@ -42,8 +44,15 @@ if (isset($_SESSION['u_usuario'])) {
 		$Sector = $OtroSector;
 	}
 
-	$query = "INSERT INTO cedula_emprendedor (id_email,Ced_Nombre_em, Ced_fecha, Ced_Lugar_nac, Ced_Estado_dom, Ced_Estado_civil, Ced_Sexo, Ced_Escolaridad, Ced_Ocupacion, Ced_Tel_local, Ced_Tel_celular, Ced_Correo_alterno, Ced_Cuenta_rfc, Ced_Personalidad, Ced_Razon_social, Ced_Giro_actividad, Ced_Contestado) VALUES ('$usuario','$Nombre', '$Fecha', '$Lugar','$Domicilio', '$Estado', '$Sexo', '$Escolaridad', '$Ocupacion', '$Local', '$Celular', '$Correo', '$OpRFC', '$Personalidad', '$Razon', '$Sector', 'Si')";
+	$query = "INSERT INTO cedula_emprendedor (id_Email_Usuario,Ced_Nombre_emp, Ced_nac, Ced_Lugar_nac, Ced_Dom_par, Ced_Estado_civil, Ced_Sexo, Ced_Escolaridad, Ced_Ocupacion, Ced_Tel_local, Ced_Tel_celular, Ced_Correo_alterno, Ced_Cuenta_rfc,Ced_Rfc ,Ced_Personalidad_juridica, Ced_Razon_social, Ced_Giro_actividad, Ced_Contestado,Ced_Puntuacion) VALUES ('$usuario','$Nombre', '$Fecha', '$Lugar','$Domicilio', '$Estado', '$Sexo', '$Escolaridad', '$Ocupacion', '$Local', '$Celular', '$Correo', '$OpRFC','$RFC', '$Personalidad', '$Razon', '$Sector', 'Si','$Puntuacion')";
 	$resultado = $conexion->query($query);
+	$calificacion = "INSERT INTO calificaciones (id_Email_Usuario, Calificacion_Sec_1) VALUES ('$usuario', '$Puntuacion')";
+	$resultado2 = $conexion->query($calificacion);
+	if ($resultado2) {
+	}else{
+		echo "está mal la consulta";
+	}
+
 	if ($resultado) {
 		header("Location: ../Cedula_Proyecto.php");
 	}else {

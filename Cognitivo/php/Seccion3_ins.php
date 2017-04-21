@@ -1,38 +1,31 @@
 <?php
 include("conexion.php");
-//Variables del emprendedor 
-$EmpLunesE = $_POST['time1_5'];
-$EmpLunesS = $_POST['time2_5'];
-$EmpMartesE = $_POST['time3_5'];
-$EmpMartesS = $_POST['time4_5'];
-$EmpMiercolesE = $_POST['time5_5'];
-$EmpMiercolesS = $_POST['time6_5'];
-$EmpJuevesE = $_POST['time7_5'];
-$EmpJuevesS = $_POST['time8_5'];
-$EmpViernesE = $_POST['time9_5'];
-$EmpViernesS = $_POST['time10_5'];
-$EmpSabadoE = $_POST['time11_5'];
-$EmpSabadoS = $_POST['time12_5'];
+$usuario = "asdas@asd.asd";
+if (isset($_REQUEST["TotalEmp"])) {
+	$hrsEmp = $_POST["TotalEmp"];
+}else {
+	$hrsEmp = "00:00";
+}
 
-//Variables del Equipo
-$EquLunesE  = $_POST['time13_5'];
-$EquLunesS = $_POST['time14_5'];
-$EquMartesE = $_POST['time15_5'];
-$EquMartesS = $_POST['time16_5'];
-$EquMiercolesE = $_POST['time17_5'];
-$EquMiercolesS = $_POST['time18_5'];
-$EquJuevesE = $_POST['time19_5'];
-$EquJuevesS = $_POST['time20_5'];
-$EquViernesE = $_POST['time21_5'];
-$EquViernesS = $_POST['time22_5'];
-$EquSabadoE = $_POST['time23_5'];
-$EquSabadoS = $_POST['time24_5'];
+if (isset($_REQUEST['TotalEqu'])) {
+	$hrsEqu = $_POST['TotalEqu'];
+}else {
+	$hrsEqu = "00:00";
+}
+
+$grado = $_POST['sec6'];
+
+echo "<br>Total de horas del emprendedor "; var_dump($hrsEmp);
+echo "<br>Total de horas del equipo emprendedor "; var_dump($hrsEqu);
+echo "<br>Grado de diferencia ";var_dump($grado);
+$horas = (int)($hrsEmp[0].$hrsEmp[1]);
+var_dump($horas);
 
 
-$query = "INSERT INTO horario(EntradaLunes, SalidaLunes, EntradaMartes, SalidaMartes) VALUES ('$EmpLunesE')";
-$resultado = $conexion->query($query);
-if ($resultado) {
-	echo "Datos ingreados correctamente";
-}else
-	echo "hubo pedos al ingresar en la BD";
+// $query = "INSERT INTO horario(EntradaLunes, SalidaLunes, EntradaMartes, SalidaMartes) VALUES ('$EmpLunesE')";
+// $resultado = $conexion->query($query);
+// if ($resultado) {
+// 	echo "Datos ingreados correctamente";
+// }else
+// 	echo "hubo pedos al ingresar en la BD";
  ?>
