@@ -20,11 +20,13 @@
       <div class="logmod__tab lgm-1">
         <div class="logmod__heading">
           <span class="logmod__heading-subtitle">Ingresa tu correo y contraseña <strong>para crear una cuenta</strong></span>
+                <label class="logmod__heading-subtitle2" id="texto">
         </div>
         <div class="logmod__form">
           <form accept-charset="utf-8" action="php/Registrar.php" class="simform" onsubmit="return ValidarRegistro();" method="POST">
             <div class="sminputs">
               <div class="input full">
+
                 <label class="string optional" for="Correo">Correo*</label>
                 <input class="string optional" name="Correo" id="Correo" placeholder="Correo" type="email" required/>
               </div>
@@ -41,8 +43,15 @@
             </div>
             <div class="simform__actions">
               <input class="sumbit" name="commit" type="submit" value="Crear Cuenta" />
+              <strong> Tipo de Proyecto</strong></label><br>
+                <label class="logmod__heading-subtitle" for="Interno">Interno</label>
+                <input type="radio" name="Tipo" id="Interno" value="Interno">
+                <label class="logmod__heading-subtitle" for="Externo">Externo</label>
+                <input type="radio" name="Tipo" id="Externo" value="Externo">
+            </div>
+            <div class="simform__actions">
               <span class="simform__actions-sidetext">Los campos solo aceptan los caracteres <a class="special" target="_blank">Letras,Numeros y signos(!,?,-) </a></span>
-            </div> 
+            </div>
           </form>
         </div>
       </div>

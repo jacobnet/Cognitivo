@@ -18,7 +18,7 @@
           
               <form action="php/Seccion1_ins.php" method="post" class="form_1" onsubmit=" return ValidarSec1();">
                   <strong>1.- Definici&oacute;n del equipo de trabajo que respaldar&aacute; el proyecto</strong>
-              <i>Puedes elegir mas de una opci&oacute;n</i>
+              <i>(Puedes elegir mas de una opci&oacute;n)</i>
               <br><br><table style="text-align: center;" class="table_1">
               <tr>
                   <td><b>&Aacute;reas de gesti&oacute;n empresarial</b></td>
@@ -64,19 +64,18 @@
 
                   <td colspan="3" style="text-align: left"><br><br>
             <br><br>El n&uacute;mero de socios o colaboradores formales en el proyecto o empresa son 2 o m&aacute; de 2 personas
-                  <input type="radio" name="radio1" id="radio1" value="el numero de socios o colaboradores formales en el proyecto o empresa son 2 o mas personas">
+                  <input type="radio" name="radio1" id="radio1" value="a">
                   </td>
               </tr>
                <tr>
                   <td colspan="3" style="text-align: left">Soy solo yo el que está iniciando o manejando el negocio pero me gustaría integrar socios
-                  <input type="radio" name="radio1" id="radio2" value="Soy solo yo el que está iniciando o manejando el negocio pero me gustaría integrar socios">
+                  <input type="radio" name="radio1" id="radio2" value="b">
                   </td>
               </tr>
                <tr>
                   <td colspan="3" style="text-align: left">Soy solo yo el que está iniciando o manejando el negocio pero no me interesa formar un 
                       equipo de trabajo, siento que puedo tener buenos resultados trabajando yo solo
-                  <input type="radio" name="radio1" id="radio3" value="Soy solo yo el que está iniciando o manejando el negocio pero no me interesa formar un 
-                      equipo de trabajo, siento que puedo tener buenos resultados trabajando yo solo">
+                  <input type="radio" name="radio1" id="radio3" value="c">
                   </td>
               </tr>
               </table><br>

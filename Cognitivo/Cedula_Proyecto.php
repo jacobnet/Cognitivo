@@ -21,7 +21,7 @@
 
         <!-- You only need this form and the form-basic.css -->
 
-        <form class="form-basic" method="post" action="php/CedulaProyecto_ins.php" onsubmit="return ValidarCedula_Proyecto();">
+        <form class="form-basic" method="POST" action="php/CedulaProyecto_ins.php" onsubmit="return ValidarCedula_Proyecto();">
 
             <div class="form-title-row">
                 <h1>Referencias Generales</h1>
